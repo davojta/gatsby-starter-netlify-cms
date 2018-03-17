@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby + Netlify CMS Starter',
+    title: 'Knikni студия дизайна',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -33,5 +33,17 @@ module.exports = {
         modulePath: `${__dirname}/src/cms/cms.js`,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Istok Web`, ],
+      },
+    },
+      {
+          resolve: `gatsby-plugin-typography`,
+          options: {
+              pathToConfigModule: `src/utils/typography.js`,
+          },
+      },
   ],
 }
