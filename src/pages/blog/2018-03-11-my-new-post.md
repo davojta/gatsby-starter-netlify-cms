@@ -1,15 +1,15 @@
 ---
 templateKey: blog-post
-title: My new post
+title: Новая запись в блоге
 date: 2018-03-11T10:01:00.838Z
-description: 'Hello, my name is Dzianis. I''m programmer'
+description: 'Привет! Меня зовут Саша, и я делаю студию стоп моушен'
 ---
-`Hello!`
+Привет!
 
 
-![Hello!](/img/coffee-gear.png)
+![фотка](/img/coffee-gear.png)
 
-I live in Minsk, I'm software engineer.
+ Меня зовут Саша, и я делаю студию стоп моушен
 <div align="center">
     <iframe width="620" height="315"
         src="https://www.youtube.com/embed/OhlVBpEnjig">

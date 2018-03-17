@@ -9,34 +9,41 @@ export default class IndexBlogPage extends React.Component {
     return (
       <section className="section">
         <div className="container">
-          <div className="content">
-            <h1 className="has-text-weight-bold is-size-2">Latest Stories</h1>
-          </div>
-          {posts
-            .filter(post => post.node.frontmatter.templateKey === 'blog-post')
-            .map(({ node: post }) => (
-              <div
-                className="content"
-                style={{ border: '1px solid #eaecee', padding: '2em 4em' }}
-                key={post.id}
-              >
-                <p>
-                  <Link className="has-text-primary" to={post.fields.slug}>
-                    {post.frontmatter.title}
-                  </Link>
-                  <span> &bull; </span>
-                  <small>{post.frontmatter.date}</small>
-                </p>
-                <p>
-                  {post.excerpt}
-                  <br />
-                  <br />
-                  <Link className="button is-small" to={post.fields.slug}>
-                    Keep Reading →
-                  </Link>
-                </p>
-              </div>
-            ))}
+            <div className="columns">
+                <div className="column is-10 is-offset-1">
+                    <div className="section">
+                        <div className="content">
+                            <h1 className="has-text-weight-bold is-size-2">Последние записи</h1>
+                        </div>
+                        {posts
+                            .filter(post => post.node.frontmatter.templateKey === 'blog-post')
+                            .map(({ node: post }) => (
+                                <div
+                                    className="content"
+                                    style={{ border: '1px solid #eaecee', padding: '2em 4em' }}
+                                    key={post.id}
+                                >
+                                    <p>
+                                        <Link className="has-text-primary" to={post.fields.slug}>
+                                            {post.frontmatter.title}
+                                        </Link>
+                                        <span> &bull; </span>
+                                        <small>{post.frontmatter.date}</small>
+                                    </p>
+                                    <p>
+                                        {post.excerpt}
+                                        <br />
+                                        <br />
+                                        <Link className="button is-small" to={post.fields.slug}>
+                                            Keep Reading →
+                                        </Link>
+                                    </p>
+                                </div>
+                            ))}
+                    </div>
+                </div>
+            </div>
+
         </div>
       </section>
     )
