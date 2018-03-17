@@ -1,0 +1,22 @@
+<svg width="46" height="46" viewBox="0 0 46 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Layer 9</title>
+    <desc>Created using Figma</desc>
+    <g id="Canvas" transform="translate(-1083 369)">
+        <g id="Layer 9">
+            <g id="Vector">
+                <use xlink:href="#path0_fill" transform="translate(1083.57 -352.006)" fill="#D6A60F"/>
+            </g>
+            <g id="Vector">
+                <use xlink:href="#path1_fill" transform="translate(1083.57 -369)" fill="#D6A60F"/>
+            </g>
+            <g id="Vector">
+                <use xlink:href="#path2_fill" transform="translate(1097.95 -354.433)" fill="#D6A60F"/>
+            </g>
+        </g>
+    </g>
+    <defs>
+        <path id="path0_fill" fill-rule="evenodd" d="M -6.01802e-08 4.87434e-07L -6.01802e-08 29.0056L 45.4346 29.0056L 45.4346 4.87434e-07L 33.0663 4.87434e-07C 34.0759 1.78889 34.707 3.83333 34.707 6.00555C 34.707 12.65 29.4063 18.1444 22.7173 18.1444C 16.1545 18.1444 10.7276 12.7778 10.7276 6.00555C 10.7276 3.83333 11.3586 1.78889 12.3683 4.87434e-07L -6.01802e-08 4.87434e-07Z"/>
+        <path id="path1_fill" fill-rule="evenodd" d="M 40.7649 4.47222L 32.4352 4.47222L 32.4352 9.83889L 40.7649 9.83889L 40.7649 4.47222ZM 45.4346 -6.09292e-08L 45.4346 15.3333L 32.0566 15.3333C 29.9111 12.65 26.5035 10.8611 22.8435 10.8611C 19.0573 10.8611 15.7759 12.5222 13.6304 15.3333L -6.01802e-08 15.3333L -6.01802e-08 -6.09292e-08L 45.4346 -6.09292e-08Z"/>
+        <path id="path2_fill" d="M 8.32967 16.8667C 12.93 16.8667 16.6593 13.0909 16.6593 8.43333C 16.6593 3.77573 12.93 0 8.32967 0C 3.72932 0 0 3.77573 0 8.43333C 0 13.0909 3.72932 16.8667 8.32967 16.8667Z"/>
+    </defs>
+</svg>
