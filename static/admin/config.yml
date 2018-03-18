@@ -22,8 +22,15 @@ collections:
     label: "Pages"
     files:
       - file: "src/pages/about/index.md"
-        label: "About"
+        label: "О студии"
         name: "about"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
+      - file: "src/pages/contacts/index.md"
+        label: "Контакты"
+        name: "contacts"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
           - {label: "Title", name: "title", widget: "string"}
