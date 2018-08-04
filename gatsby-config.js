@@ -34,16 +34,23 @@ module.exports = {
       },
     },
     {
+        resolve: 'gatsby-source-behance',
+        options: {
+            username: 'kniknistud2053',
+            apiKey: `rzu5WSUC8ZnRFyfWTwnE0LP1ZCWNGxiv`,
+        },
+    },
+    {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [`Istok Web`, ],
       },
     },
-      {
-          resolve: `gatsby-plugin-typography`,
-          options: {
-              pathToConfigModule: `src/utils/typography.js`,
-          },
-      },
+    {
+        resolve: `gatsby-plugin-typography`,
+        options: {
+            pathToConfigModule: `src/utils/typography.js`,
+        },
+    },
   ],
 }

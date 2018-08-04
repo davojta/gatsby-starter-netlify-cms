@@ -19,7 +19,27 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
           }
         }
       }
+      allBehanceProjects(sort: { fields: [published], order: DESC }) {
+        edges {
+          node {
+            id
+            name
+            published
+            url
+            areas
+            covers {
+              size_original
+            }
+            stats {
+              views
+              appreciations
+              comments
+            }
+          }
+        }
+      }
     }
+    
   `).then(result => {
     if (result.errors) {
       result.errors.forEach(e => console.error(e.toString()))
@@ -28,16 +48,69 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 
     result.data.allMarkdownRemark.edges.forEach(edge => {
       const id = edge.node.id
-      createPage({
-        path: edge.node.fields.slug,
-        component: path.resolve(
-          `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
-        ),
-        // additional data can be passed via context
-        context: {
-          id,
-        },
-      })
+      const { slug } = edge.node.fields;
+      if (slug === '/products/') {
+        console.log('products/')
+        createPage({
+          path: edge.node.fields.slug,
+          component: path.resolve(
+            `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
+          ),
+          // additional data can be passed via context
+          context: {
+            id,
+            projects: result.data.allBehanceProjects.edges,
+          },
+        })
+        result.data.allBehanceProjects.edges.map((project) => {
+          console.log('product page', `${edge.node.fields.slug}${project.node.id}/`)
+          createPage({
+            path: `${edge.node.fields.slug}${project.node.id}/`,
+            component: path.resolve(
+              `src/templates/project-page.js`
+            ),
+            // additional data can be passed via context
+            context: {
+              projectId: project.node.id,
+              id,
+            },
+          })
+        })
+      } else {
+        console.log('other slug', slug);
+        createPage({
+          path: edge.node.fields.slug,
+          component: path.resolve(
+            `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
+          ),
+          // additional data can be passed via context
+          context: {
+            id,
+          },
+        })
+      }
+
+    })
+    const portPageContext = {
+      images: [],
+    };
+    result.data.allBehanceProjects.edges.forEach((edge) => {
+        const { node } = edge;
+        const {
+          name,
+          url,
+          covers,
+        } = node;
+        const { size_original } = covers;
+
+        const image = {
+          url: size_original,
+          alt: name,
+        };
+
+        portPageContext.images.push(image);
+
+        // console.log('image', image);
     })
   })
 }

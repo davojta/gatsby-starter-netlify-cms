@@ -16,6 +16,10 @@ $size-4: 1.5rem !default
     padding-left: 0.75rem;
   }
 
+  .navbar-logo {
+    width: 10rem;
+  }
+
   .socnav {
     align-items: stretch;
 
@@ -71,16 +75,72 @@ $size-4: 1.5rem !default
   .navbar {
     height: 7rem;
 
+    .navbar-logo {
+      width: 7rem;
+    }
+
     .logo {
       width: 7rem;
       height: 7rem;
       top: 3.3rem;
       left: -1rem;
+    }
+  }
+}
 
+@media (max-width: $desktop) {
+  .navbar {
+    height: 2rem;
+
+    .navbar-menu {
+      position: absolute;
+      width: 100%;
+      z-index: 10000;
     }
 
+    //.navbar-end {
+    //  display: none;
+    //}
+    //.navbar-start {
+    //  display: none;
+    //}
+    .logo {
+      width: 2rem;
+      height: 2rem;
+
+      top: 0.5rem;
+      left: 1rem;
+
+      img {
+        max-height: 40rem;
+      }
+    }
+  }
+}
+
+@media (max-width: $desktop) {
+  .navbar-burger {
+    display: block;
+  }
+}
+
+@media (min-width: $desktop) {
+  .navbar-burger {
+    display: none;
   }
 
+  .navbar-brand {
+    margin-left: 1rem;
+  }
+  .navbar-menu {
+    margin-left: 1rem;
+  }
+
+  .sec-menu {
+    position: absolute;
+    top: 3rem;
+    left: 0;
+  }
 }
 
 html, body {
@@ -117,6 +177,39 @@ footer, .push {
   @media (max-width: $widescreen) {
     width: 50rem;
     height: 25rem;
+  }
+  @media (max-width: $desktop) {
+    width: 25rem;
+    height: 12.5rem;
+    margin-bottom: 4rem;
+  }
+}
+
+.portfolio-layout {
+  margin-left: 8rem;
+}
+
+.behance-text {
+  .bold {
+    font-weight: $weight-bold;
+  }
+  .italic {
+    font-style: italic;
+  }
+  .embed {
+    padding-bottom: 20px;
+  }
+  .image {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+}
+
+.projects-list {
+  .section {
+    padding: 0 0.5rem;
   }
 }
 
