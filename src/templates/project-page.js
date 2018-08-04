@@ -3,7 +3,6 @@ import Features from '../components/Features'
 import Testimonials from '../components/Testimonials'
 import Pricing from '../components/Pricing'
 
-import { BPImage, BPVideo, BPYoutube, BPVimeo } from 'bigpicture-react';
 import Link from 'gatsby-link'
 
 export const ProjectPageTemplate = ({
@@ -59,11 +58,7 @@ export const ProjectPageTemplate = ({
                     } else if (type === 'image') {
                       return (
                         <div className="image" style={{maxWidth: 640 }}>
-                          <BPImage
-                            src={module.src}
-                          >
-                            <img src={module.src} width={module.width} height={module.height}/>
-                          </BPImage>
+                          <img src={module.src} width={module.width} height={module.height}/>
                         </div>
                       );
                     }
