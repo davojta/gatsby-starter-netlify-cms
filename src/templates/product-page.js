@@ -15,25 +15,27 @@ export const ProductPageTemplate = ({
   projects,
   menu,
 }) => (
-  <section className="section section--gradient">
+  <section className="section--gradient">
+    <div className="sec-menu">
+      <aside className="menu">
+        <p className="menu-label">
+          Проекты
+        </p>
+        <ul className="menu-list">
+          {menu.animation.map((menuItem) => {
+
+            return (<li><Link to={`/products/${menuItem.id}`} className="project-link">{menuItem.name}</Link></li>)
+          })}
+        </ul>
+      </aside>
+    </div>
     <div className="container">
-      <div className="section">
+      <div className="section" style={{padding: '1.5rem 1.5rem'}}>
+
         <div className="columns">
           <div className="portfolio-layout column is-10 is-offset-1">
             <div className="content">
-              <div className="sec-menu">
-                <aside className="menu">
-                  <p className="menu-label">
-                    Animation
-                  </p>
-                  <ul className="menu-list">
-                    {menu.animation.map((menuItem) => {
 
-                      return (<li><Link to={`/products/${menuItem.id}`} className="project-link">{menuItem.name}</Link></li>)
-                    })}
-                  </ul>
-                </aside>
-              </div>
               <h2 className="has-text-weight-semibold is-size-2">
                 {title}
               </h2>
@@ -49,8 +51,8 @@ export const ProductPageTemplate = ({
                       <p className="has-text-centered">
 
                         <figure className="image">
-                          <img alt={`${node.name} image`} src={node.covers.size_original} />
-                          <figcaption><Link to={`/products/${node.id}`} className="project-link">{node.name} / {node.description} </Link></figcaption>
+                          <img alt={`${node.name} image`} src={node.covers.size_404} />
+                          <figcaption><Link to={`/products/${node.id}`} className="project-link">{node.name}</Link></figcaption>
                         </figure>
                       </p>
                     </section>
@@ -58,15 +60,6 @@ export const ProductPageTemplate = ({
                   );
                 })}
               </div>
-              <ul>
-                {projects.map((project) => {
-                    return (
-                      <li>{project.node.name} </li>
-                    )
-                })}
-              </ul>
-
-
             </div>
           </div>
         </div>
@@ -108,6 +101,7 @@ export const productPageQuery = graphql`
           areas
           covers {
             size_original
+            size_404
           }
           stats {
             views
