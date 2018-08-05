@@ -17,7 +17,7 @@ export const ProjectPageTemplate = ({
           Проекты
         </p>
         <ul className="menu-list">
-          {menu.animation.map((menuItem) => {
+          {menu.projects.map((menuItem) => {
 
             return (<li><Link to={`/products/${menuItem.id}`} className="project-link">{menuItem.name}</Link></li>)
           })}
@@ -95,7 +95,7 @@ query ProjectPage($projectId: String!) {
         node {
           frontmatter {
             menu {
-              animation {
+              projects {
                 name
                 id
               }

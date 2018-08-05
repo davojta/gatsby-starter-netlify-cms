@@ -5,14 +5,9 @@ import Pricing from '../components/Pricing'
 import Link from 'gatsby-link'
 
 export const ProductPageTemplate = ({
-  image,
   title,
-  heading,
   description,
-  intro,
-  main,
-  fullImage,
-  projects,
+  projects = [],
   menu,
 }) => (
   <section className="section--gradient">
@@ -22,7 +17,7 @@ export const ProductPageTemplate = ({
           Проекты
         </p>
         <ul className="menu-list">
-          {menu.animation.map((menuItem) => {
+          {menu.projects.map((menuItem) => {
 
             return (<li><Link to={`/products/${menuItem.id}`} className="project-link">{menuItem.name}</Link></li>)
           })}
@@ -42,22 +37,33 @@ export const ProductPageTemplate = ({
               <p>{description}</p>
 
               <div className="projects-list columns is-multiline">
-                {projects.map(project => {
-                  const { node } = project;
-                  return (
+                {projects
+                  .filter(project => {
+                    const { node } = project;
+                    let { id } = node;
+                    // id = parseInt(id);
 
-                  <div key={node.covers.size_original} className="column is-6">
-                    <section className="section">
-                      <p className="has-text-centered">
+                    const idsToShow = menu.projects.map(me => me.id)
 
-                        <figure className="image">
-                          <img alt={`${node.name} image`} src={node.covers.size_404} />
-                          <figcaption><Link to={`/products/${node.id}`} className="project-link">{node.name}</Link></figcaption>
-                        </figure>
-                      </p>
-                    </section>
-                  </div>
-                  );
+                    console.log('idsToShow', idsToShow, id, idsToShow.includes(id));
+
+                    return idsToShow.includes(id);
+                  })
+                  .map(project => {
+                    const { node } = project;
+                    return (
+                    <div key={node.covers.size_original} className="column is-6">
+                      <section className="section">
+                        <p className="has-text-centered">
+
+                          <figure className="image">
+                            <img alt={`${node.name} image`} src={node.covers.size_404} />
+                            <figcaption><Link to={`/products/${node.id}`} className="project-link">{node.name}</Link></figcaption>
+                          </figure>
+                        </p>
+                      </section>
+                    </div>
+                    );
                 })}
               </div>
             </div>
@@ -72,8 +78,8 @@ export default ({ data, projectId }) => {
   const { frontmatter } = data.markdownRemark
   const { edges } = data.allBehanceProjects;
 
-  console.log('data', data);
-  console.log('projectId', projectId);
+  // console.log('data', data);
+  // console.log('projectId', projectId);
 
   return (
     <ProductPageTemplate
@@ -114,11 +120,9 @@ export const productPageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
-        image
-        heading
         description
         menu {
-          animation {
+          projects {
             name
             id
           }

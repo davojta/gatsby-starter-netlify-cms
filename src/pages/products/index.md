@@ -1,5 +1,6 @@
 ---
 templateKey: product-page
+path: /products
 title: Кни кни студия
 description: >-
   Кни кни студия - это дизайн студия, главной специализацией которой является
@@ -8,5 +9,7 @@ menu:
   projects:
     - id: '63006891'
       name: LSTR
+    - id: '66374583'
+      name: ВТБ
 ---
 
