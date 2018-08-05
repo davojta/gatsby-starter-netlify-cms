@@ -11,21 +11,21 @@ export const ProjectPageTemplate = ({
   menu,
 }) => (
   <section className="section--gradient">
-    <div className="sec-menu">
-      <aside className="menu">
-        <p className="menu-label">
-          Проекты
-        </p>
-        <ul className="menu-list">
-          {menu.projects.map((menuItem) => {
-
-            return (<li><Link to={`/products/${menuItem.id}`} className="project-link">{menuItem.name}</Link></li>)
-          })}
-        </ul>
-      </aside>
-    </div>
     <div className="container">
       <div className="section" style={{padding: '1.5rem 1.5rem'}}>
+        <div className="sec-menu">
+          <aside className="menu">
+            <p className="menu-label">
+              Проекты
+            </p>
+            <ul className="menu-list">
+              {menu.projects.map((menuItem) => {
+
+                return (<li><Link to={`/portfolio/${menuItem.id}`} className="project-link">{menuItem.name}</Link></li>)
+              })}
+            </ul>
+          </aside>
+        </div>
         <div className="columns">
           <div className="column is-10 is-offset-1">
             <div className="content">
@@ -90,7 +90,7 @@ export default ({ data }) => {
 
 export const projectPageQuery = graphql`
 query ProjectPage($projectId: String!) {
-    allMarkdownRemark(filter: {fields: {slug: {eq: "/products/"}}}) {
+    allMarkdownRemark(filter: {fields: {slug: {eq: "/portfolio/"}}}) {
       edges {
         node {
           frontmatter {

@@ -37,7 +37,7 @@ class Navbar extends React.Component {
                         <Link className="navbar-item" to="/about" onClick={()=> this.setState({isBurgerActive: !this.state.isBurgerActive})}>
                             О cтудии
                         </Link>
-                        <Link className="navbar-item" to="/products" onClick={()=> this.setState({isBurgerActive: !this.state.isBurgerActive})}>
+                        <Link className="navbar-item" to="/portfolio" onClick={()=> this.setState({isBurgerActive: !this.state.isBurgerActive})}>
                             Портфолио
                         </Link>
                         <Link className="navbar-item" to="/blog" onClick={()=> this.setState({isBurgerActive: !this.state.isBurgerActive})}>
@@ -49,9 +49,6 @@ class Navbar extends React.Component {
                     </div>
                     <div className="navbar-end">
                         <SocNav/>
-                        {/*<Link className="navbar-item" to="/products">*/}
-                        {/*Fb*/}
-                        {/*</Link>*/}
                     </div>
                 </div>
 

@@ -1,6 +1,6 @@
 ---
 templateKey: product-page
-path: /products
+path: /portfolio
 title: Кни кни студия
 description: >-
   Кни кни студия - это дизайн студия, главной специализацией которой является

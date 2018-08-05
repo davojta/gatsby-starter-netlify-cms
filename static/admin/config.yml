@@ -39,12 +39,12 @@ collections:
           - {label: "Path", name: "path", widget: "hidden", default: "/contacts"}
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
-      - file: "src/pages/products/index.md"
+      - file: "src/pages/portfolio/index.md"
         label: "Портфолио"
-        name: "products"
+        name: "portfolio"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "product-page"}
-          - {label: "Path", name: "path", widget: "hidden", default: "/products"}
+          - {label: "Path", name: "path", widget: "hidden", default: "/portfolio"}
           - {label: Title, name: title, widget: string}
           - {label: Description, name: description, widget: string}
           - {label: Меню, name: menu, widget: object, fields: [{label: Проекты, name: projects, widget: list, fields: [{label: Название в меню, name: name, widget: string}, {label: Id проекта на behance, name: id, widget: number}]}]}

@@ -49,7 +49,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     result.data.allMarkdownRemark.edges.forEach(edge => {
       const id = edge.node.id
       const { slug } = edge.node.fields;
-      if (slug === '/products/') {
+      if (slug === '/portfolio/') {
         console.log('products/')
         createPage({
           path: edge.node.fields.slug,

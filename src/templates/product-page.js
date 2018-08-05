@@ -19,7 +19,7 @@ export const ProductPageTemplate = ({
         <ul className="menu-list">
           {menu.projects.map((menuItem) => {
 
-            return (<li><Link to={`/products/${menuItem.id}`} className="project-link">{menuItem.name}</Link></li>)
+            return (<li><Link to={`/portfolio/${menuItem.id}`} className="project-link">{menuItem.name}</Link></li>)
           })}
         </ul>
       </aside>
@@ -58,7 +58,7 @@ export const ProductPageTemplate = ({
 
                           <figure className="image">
                             <img alt={`${node.name} image`} src={node.covers.size_404} />
-                            <figcaption><Link to={`/products/${node.id}`} className="project-link">{node.name}</Link></figcaption>
+                            <figcaption><Link to={`/portfolio/${node.id}`} className="project-link">{node.name}</Link></figcaption>
                           </figure>
                         </p>
                       </section>
