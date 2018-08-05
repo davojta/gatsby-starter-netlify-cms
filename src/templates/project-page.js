@@ -10,34 +10,28 @@ export const ProjectPageTemplate = ({
   projectId,
   menu,
 }) => (
-  <section className="section section--gradient">
+  <section className="section--gradient">
+    <div className="sec-menu">
+      <aside className="menu">
+        <p className="menu-label">
+          Проекты
+        </p>
+        <ul className="menu-list">
+          {menu.animation.map((menuItem) => {
+
+            return (<li><Link to={`/products/${menuItem.id}`} className="project-link">{menuItem.name}</Link></li>)
+          })}
+        </ul>
+      </aside>
+    </div>
     <div className="container">
-      <div className="section">
+      <div className="section" style={{padding: '1.5rem 1.5rem'}}>
         <div className="columns">
           <div className="column is-10 is-offset-1">
             <div className="content">
-              <div className="sec-menu">
-                <aside className="menu">
-                  <p className="menu-label">
-                    Animation
-                  </p>
-                  <ul className="menu-list">
-                    {menu.animation.map((menuItem) => {
-
-                      return (<li><Link to={`/products/${menuItem.id}`} className="project-link">{menuItem.name}</Link></li>)
-                    })}
-                  </ul>
-                </aside>
-              </div>
-                <h2
-                  className="has-text-weight-bold is-size-1"
-                  style={{
-                    padding: '1rem',
-                  }}
-                >
-                  {project.name}
-                </h2>
-
+              <h2 className="has-text-weight-semibold is-size-2">
+                {project.name}
+              </h2>
               <div className="behance-text">
                 {project.modules
                   .filter(({type}) => type === 'text' || type === 'embed' || type === 'image')
