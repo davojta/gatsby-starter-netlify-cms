@@ -7,16 +7,17 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
   return (
     <section className="section--gradient">
       <div className="container">
-        <div className="columns">
-          <div className="page-content column is-10 is-offset-1">
-            <div className="section">
-              <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
+        <div className="section" style={{padding: '1.5rem 1.5rem'}}>
+          <div className="columns">
+            <div className="page-content column is-10 is-offset-1">
+              <h2 className="title is-bold-light has-text-weight-semibold is-size-2">
                 {title}
               </h2>
               <PageContent className="content" content={content} />
             </div>
           </div>
         </div>
+
       </div>
     </section>
   )

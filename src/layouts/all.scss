@@ -181,7 +181,10 @@ footer, .push {
 }
 
 .portfolio-layout {
-  margin-left: 8rem;
+  @media (min-width: $desktop) {
+    margin-left: 8rem;
+  }
+
 }
 
 .behance-text {
@@ -222,25 +225,29 @@ footer, .push {
 .sec-menu {
   z-index: 1000;
   display: none;
+  position: absolute;
+
+  top: 5rem;
+
+  left: -2rem;
+
+  .menu-label {
+    font-size: larger;
+    color: black;
+  }
+
+  .menu-label:not(:last-child) {
+    margin: 0;
+  }
+  .menu-list a {
+    padding: 0.1em 0;
+  }
   @media (min-width: $desktop) {
     display: block;
-    position: absolute;
-
-    top: 5rem;
-
-    left: -2rem;
-
-    .menu-label {
-      font-size: larger;
-      color: black;
-    }
-
-    .menu-label:not(:last-child) {
-      margin: 0;
-    }
-    .menu-list a {
-      padding: 0.1em 0;
-    }
+  }
+  @media (min-width: 1600px) {
+    top: 7rem;
+    left: -7rem;
   }
 }
 
@@ -258,3 +265,22 @@ footer, .push {
   }
 }
 
+
+
+@media (max-width: $tablet) {
+  .embed iframe {
+    width: 480px;
+    height: 270px;
+  }
+  .image img {
+    height: 100%;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .embed iframe {
+    width: 320px;
+    height: 180px;
+  }
+}

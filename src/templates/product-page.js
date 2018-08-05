@@ -11,24 +11,24 @@ export const ProductPageTemplate = ({
   menu,
 }) => (
   <section className="section--gradient">
-    <div className="sec-menu">
-      <aside className="menu">
-        <p className="menu-label">
-          Проекты
-        </p>
-        <ul className="menu-list">
-          {menu.projects.map((menuItem) => {
 
-            return (<li><Link to={`/portfolio/${menuItem.id}`} className="project-link">{menuItem.name}</Link></li>)
-          })}
-        </ul>
-      </aside>
-    </div>
     <div className="container">
       <div className="section" style={{padding: '1.5rem 1.5rem'}}>
+        <div className="sec-menu">
+          <aside className="menu">
+            <p className="menu-label">
+              Проекты
+            </p>
+            <ul className="menu-list">
+              {menu.projects.map((menuItem) => {
 
+                return (<li><Link to={`/portfolio/${menuItem.id}`} className="project-link">{menuItem.name}</Link></li>)
+              })}
+            </ul>
+          </aside>
+        </div>
         <div className="columns">
-          <div className="portfolio-layout column is-10 is-offset-1">
+          <div className="page-content column is-10 is-offset-1">
             <div className="content">
 
               <h2 className="has-text-weight-semibold is-size-2">
