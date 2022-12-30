@@ -7,7 +7,7 @@
     "bigpicture": "^1.3.2",
     "bigpicture-react": "^1.0.4",
     "bulma": "^0.6.2",
-    "gatsby": "^1.9.277",
+    "gatsby": "^5.3.3",
     "gatsby-link": "^1.6.46",
     "gatsby-plugin-google-fonts": "^0.0.3",
     "gatsby-plugin-netlify-cms": "^1.0.12",
